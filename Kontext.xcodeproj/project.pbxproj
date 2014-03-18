@@ -43,14 +43,14 @@
 		9B20A35D17502BDD009FC97A /* APLCalibrationCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APLCalibrationCalculator.m; sourceTree = "<group>"; };
 		9B20A35F17553D5C009FC97A /* APLCalibrationEndViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APLCalibrationEndViewController.h; sourceTree = "<group>"; };
 		9B20A36017553D5C009FC97A /* APLCalibrationEndViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APLCalibrationEndViewController.m; sourceTree = "<group>"; };
-		9B59E5B0174E7BF20083A8A5 /* AirLocate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirLocate.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B59E5B0174E7BF20083A8A5 /* Kontext.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kontext.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B59E5B3174E7BF20083A8A5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9B59E5B5174E7BF20083A8A5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9B59E5B7174E7BF20083A8A5 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		9B59E5BB174E7BF20083A8A5 /* AirLocate-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AirLocate-Info.plist"; sourceTree = "<group>"; };
+		9B59E5BB174E7BF20083A8A5 /* Kontext-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Kontext-Info.plist"; sourceTree = "<group>"; };
 		9B59E5BD174E7BF20083A8A5 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9B59E5BF174E7BF20083A8A5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		9B59E5C1174E7BF20083A8A5 /* AirLocate-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AirLocate-Prefix.pch"; sourceTree = "<group>"; };
+		9B59E5C1174E7BF20083A8A5 /* Kontext-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Kontext-Prefix.pch"; sourceTree = "<group>"; };
 		9B59E5C2174E7BF20083A8A5 /* APLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APLAppDelegate.h; sourceTree = "<group>"; };
 		9B59E5C3174E7BF20083A8A5 /* APLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APLAppDelegate.m; sourceTree = "<group>"; };
 		9B658B09174EA58200271210 /* APLConfigurationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APLConfigurationViewController.h; sourceTree = "<group>"; };
@@ -84,7 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				9BCE8DE817600E940089D274 /* ReadMe.txt */,
-				9B59E5B9174E7BF20083A8A5 /* AirLocate */,
+				9B59E5B9174E7BF20083A8A5 /* Kontext */,
 				9B59E5B2174E7BF20083A8A5 /* Frameworks */,
 				9B59E5B1174E7BF20083A8A5 /* Products */,
 			);
@@ -93,7 +93,7 @@
 		9B59E5B1174E7BF20083A8A5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9B59E5B0174E7BF20083A8A5 /* AirLocate.app */,
+				9B59E5B0174E7BF20083A8A5 /* Kontext.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -110,7 +110,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		9B59E5B9174E7BF20083A8A5 /* AirLocate */ = {
+		9B59E5B9174E7BF20083A8A5 /* Kontext */ = {
 			isa = PBXGroup;
 			children = (
 				8391981E17EB60E30079CA42 /* APLUUIDViewController.h */,
@@ -135,18 +135,18 @@
 				9B59E5C3174E7BF20083A8A5 /* APLAppDelegate.m */,
 				9B59E5BA174E7BF20083A8A5 /* Supporting Files */,
 			);
-			path = AirLocate;
+			path = Kontext;
 			sourceTree = "<group>";
 		};
 		9B59E5BA174E7BF20083A8A5 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
 				28D68B82177BA8C100461540 /* Main.storyboard */,
-				9B59E5BB174E7BF20083A8A5 /* AirLocate-Info.plist */,
+				9B59E5BB174E7BF20083A8A5 /* Kontext-Info.plist */,
 				9B59E5BC174E7BF20083A8A5 /* InfoPlist.strings */,
 				9B59E5BF174E7BF20083A8A5 /* main.m */,
 				28F04CC7177BC6BB00D71779 /* Media.xcassets */,
-				9B59E5C1174E7BF20083A8A5 /* AirLocate-Prefix.pch */,
+				9B59E5C1174E7BF20083A8A5 /* Kontext-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -154,9 +154,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9B59E5AF174E7BF20083A8A5 /* AirLocate */ = {
+		9B59E5AF174E7BF20083A8A5 /* Kontext */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9B59E5CD174E7BF20083A8A5 /* Build configuration list for PBXNativeTarget "AirLocate" */;
+			buildConfigurationList = 9B59E5CD174E7BF20083A8A5 /* Build configuration list for PBXNativeTarget "Kontext" */;
 			buildPhases = (
 				9B59E5AC174E7BF20083A8A5 /* Sources */,
 				9B59E5AD174E7BF20083A8A5 /* Frameworks */,
@@ -166,9 +166,9 @@
 			);
 			dependencies = (
 			);
-			name = AirLocate;
-			productName = AirLocate;
-			productReference = 9B59E5B0174E7BF20083A8A5 /* AirLocate.app */;
+			name = Kontext;
+			productName = Kontext;
+			productReference = 9B59E5B0174E7BF20083A8A5 /* Kontext.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -177,9 +177,9 @@
 		9B59E5A8174E7BF20083A8A5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = AL;
+				CLASSPREFIX = CEK;
 				LastUpgradeCheck = 0500;
-				ORGANIZATIONNAME = Apple;
+				ORGANIZATIONNAME = "Carnegie Mellon University";
 				TargetAttributes = {
 					9B59E5AF174E7BF20083A8A5 = {
 						SystemCapabilities = {
@@ -190,7 +190,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 9B59E5AB174E7BF20083A8A5 /* Build configuration list for PBXProject "AirLocate" */;
+			buildConfigurationList = 9B59E5AB174E7BF20083A8A5 /* Build configuration list for PBXProject "Kontext" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -202,7 +202,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9B59E5AF174E7BF20083A8A5 /* AirLocate */,
+				9B59E5AF174E7BF20083A8A5 /* Kontext */,
 			);
 		};
 /* End PBXProject section */
@@ -284,7 +284,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -315,7 +315,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -327,10 +327,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "AirLocate/AirLocate-Prefix.pch";
-				INFOPLIST_FILE = "AirLocate/AirLocate-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "Kontext/Kontext-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/Kontext/Kontext-Info.plist";
+				PRODUCT_NAME = Kontext;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -341,10 +340,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "AirLocate/AirLocate-Prefix.pch";
-				INFOPLIST_FILE = "AirLocate/AirLocate-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "Kontext/Kontext-Prefix.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/Kontext/Kontext-Info.plist";
+				PRODUCT_NAME = Kontext;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -352,7 +350,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9B59E5AB174E7BF20083A8A5 /* Build configuration list for PBXProject "AirLocate" */ = {
+		9B59E5AB174E7BF20083A8A5 /* Build configuration list for PBXProject "Kontext" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9B59E5CB174E7BF20083A8A5 /* Debug */,
@@ -361,7 +359,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9B59E5CD174E7BF20083A8A5 /* Build configuration list for PBXNativeTarget "AirLocate" */ = {
+		9B59E5CD174E7BF20083A8A5 /* Build configuration list for PBXNativeTarget "Kontext" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9B59E5CE174E7BF20083A8A5 /* Debug */,
