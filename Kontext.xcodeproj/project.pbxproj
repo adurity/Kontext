@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		184F28D318D8F81B005A90BB /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 184F28D218D8F81B005A90BB /* README.md */; };
 		2810897C177C74F20098FCF6 /* APLProgressTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2810897B177C74F20098FCF6 /* APLProgressTableViewCell.m */; };
 		28D68B83177BA8C100461540 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28D68B82177BA8C100461540 /* Main.storyboard */; };
 		28F04CC8177BC6BB00D71779 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28F04CC7177BC6BB00D71779 /* Media.xcassets */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		184F28D218D8F81B005A90BB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		2810897A177C74F10098FCF6 /* APLProgressTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APLProgressTableViewCell.h; sourceTree = "<group>"; };
 		2810897B177C74F20098FCF6 /* APLProgressTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APLProgressTableViewCell.m; sourceTree = "<group>"; };
 		28D68B82177BA8C100461540 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = en.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -57,7 +59,6 @@
 		9B658B0A174EA58200271210 /* APLConfigurationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APLConfigurationViewController.m; sourceTree = "<group>"; };
 		9B658B0B174EA66200271210 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		9B658B0D174EA66900271210 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
-		9BCE8DE817600E940089D274 /* ReadMe.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = ReadMe.txt; sourceTree = SOURCE_ROOT; };
 		9BE35B9817556B7A00E4C77A /* APLRangingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APLRangingViewController.h; sourceTree = "<group>"; };
 		9BE35B9917556B7A00E4C77A /* APLRangingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APLRangingViewController.m; sourceTree = "<group>"; };
 		9BE35B9B17556F2D00E4C77A /* APLDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APLDefaults.h; sourceTree = "<group>"; };
@@ -83,7 +84,7 @@
 		9B59E5A7174E7BF20083A8A5 = {
 			isa = PBXGroup;
 			children = (
-				9BCE8DE817600E940089D274 /* ReadMe.txt */,
+				184F28D218D8F81B005A90BB /* README.md */,
 				9B59E5B9174E7BF20083A8A5 /* Kontext */,
 				9B59E5B2174E7BF20083A8A5 /* Frameworks */,
 				9B59E5B1174E7BF20083A8A5 /* Products */,
@@ -214,6 +215,7 @@
 			files = (
 				28D68B83177BA8C100461540 /* Main.storyboard in Resources */,
 				28F04CC8177BC6BB00D71779 /* Media.xcassets in Resources */,
+				184F28D318D8F81B005A90BB /* README.md in Resources */,
 				9B59E5BE174E7BF20083A8A5 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
