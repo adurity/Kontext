@@ -114,7 +114,7 @@
         // Default settings.
         self.enabled = NO;
         
-        self.uuid = [APLDefaults sharedDefaults].defaultProximityUUID;
+        self.uuid = [CMKDefaults sharedDefaults].defaultProximityUUID;
         self.major = self.minor = nil;
         self.notifyOnEntry = self.notifyOnExit = YES;
         self.notifyOnDisplay = NO;

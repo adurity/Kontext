@@ -80,7 +80,7 @@
 
     // Populate the regions for the beacons we're interested in calibrating.
     self.rangedRegions = [NSMutableArray array];
-    for (NSUUID *uuid in [APLDefaults sharedDefaults].supportedProximityUUIDs)
+    for (NSUUID *uuid in [CMKDefaults sharedDefaults].supportedProximityUUIDs)
     {
         CLBeaconRegion *region = [[CLBeaconRegion alloc] initWithProximityUUID:uuid identifier:[uuid UUIDString]];
         [self.rangedRegions addObject:region];

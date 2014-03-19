@@ -65,7 +65,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [APLDefaults sharedDefaults].supportedProximityUUIDs.count;
+    return [CMKDefaults sharedDefaults].supportedProximityUUIDs.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -73,10 +73,10 @@
     static NSString *CellIdentifier = @"Cell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    if(indexPath.row < [APLDefaults sharedDefaults].supportedProximityUUIDs.count)
+    if(indexPath.row < [CMKDefaults sharedDefaults].supportedProximityUUIDs.count)
     {
-        cell.textLabel.text = [[APLDefaults sharedDefaults].supportedProximityUUIDs[indexPath.row] UUIDString];
-        if([self.uuid isEqual:[APLDefaults sharedDefaults].supportedProximityUUIDs[indexPath.row]])
+        cell.textLabel.text = [[CMKDefaults sharedDefaults].supportedProximityUUIDs[indexPath.row] UUIDString];
+        if([self.uuid isEqual:[CMKDefaults sharedDefaults].supportedProximityUUIDs[indexPath.row]])
         {
             cell.accessoryType = UITableViewCellAccessoryCheckmark;
         }
@@ -93,7 +93,7 @@
     NSIndexPath * selectionIndexPath = [self.tableView indexPathForSelectedRow];
     NSInteger selection;
 
-    if(selectionIndexPath.row < [APLDefaults sharedDefaults].supportedProximityUUIDs.count)
+    if(selectionIndexPath.row < [CMKDefaults sharedDefaults].supportedProximityUUIDs.count)
     {
         selection = selectionIndexPath.row;
     }
@@ -102,7 +102,7 @@
         selection = 0;
     }
 
-    self.uuid = [APLDefaults sharedDefaults].supportedProximityUUIDs[selection];
+    self.uuid = [CMKDefaults sharedDefaults].supportedProximityUUIDs[selection];
 }
 
 @end

@@ -10,7 +10,7 @@
 NSString *BeaconIdentifier = @"com.example.apple-samplecode.AirLocate";
 
 
-@implementation APLDefaults
+@implementation CMKDefaults
 
 - (id)init
 {
@@ -28,7 +28,7 @@ NSString *BeaconIdentifier = @"com.example.apple-samplecode.AirLocate";
 }
 
 
-+ (APLDefaults *)sharedDefaults
++ (CMKDefaults *)sharedDefaults
 {
     static id sharedDefaults = nil;
     static dispatch_once_t onceToken;

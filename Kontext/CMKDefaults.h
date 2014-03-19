@@ -9,9 +9,9 @@
 extern NSString *BeaconIdentifier;
 
 
-@interface APLDefaults : NSObject
+@interface CMKDefaults : NSObject
 
-+ (APLDefaults *)sharedDefaults;
++ (CMKDefaults *)sharedDefaults;
 
 @property (nonatomic, copy, readonly) NSArray *supportedProximityUUIDs;
 

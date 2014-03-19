@@ -33,7 +33,7 @@
     // Populate the regions we will range once.
     self.rangedRegions = [[NSMutableDictionary alloc] init];
     
-    for (NSUUID *uuid in [APLDefaults sharedDefaults].supportedProximityUUIDs)
+    for (NSUUID *uuid in [CMKDefaults sharedDefaults].supportedProximityUUIDs)
     {
         CLBeaconRegion *region = [[CLBeaconRegion alloc] initWithProximityUUID:uuid identifier:[uuid UUIDString]];
         self.rangedRegions[region] = [NSArray array];

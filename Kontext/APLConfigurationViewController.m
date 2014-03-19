@@ -98,14 +98,14 @@ NSNumber *power = nil;
     }
     else
     {
-        self.uuid = [APLDefaults sharedDefaults].defaultProximityUUID;
+        self.uuid = [CMKDefaults sharedDefaults].defaultProximityUUID;
         self.major = [NSNumber numberWithShort:0];
         self.minor = [NSNumber numberWithShort:0];
     }
     
     if(!power)
     {
-        power = [APLDefaults sharedDefaults].defaultPower;
+        power = [CMKDefaults sharedDefaults].defaultPower;
     }
     
     self.numberFormatter = [[NSNumberFormatter alloc] init];
