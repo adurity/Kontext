@@ -50,7 +50,7 @@
 #import "APLCalibrationEndViewController.h"
 #import "APLCalibrationCalculator.h"
 #import "APLProgressTableViewCell.h"
-#import "APLDefaults.h"
+#import "CMKDefaults.h"
 
 
 @interface APLCalibrationBeginViewController()

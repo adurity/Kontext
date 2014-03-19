@@ -47,7 +47,7 @@
  */
 
 #import "APLCalibrationCalculator.h"
-#import "APLDefaults.h"
+#import "CMKDefaults.h"
 
 @import CoreLocation;
 

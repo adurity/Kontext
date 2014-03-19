@@ -47,7 +47,7 @@
  */
 
 #import "APLConfigurationViewController.h"
-#import "APLDefaults.h"
+#import "CMKDefaults.h"
 #import "APLUUIDViewController.h"
 
 @import CoreLocation;
