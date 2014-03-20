@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		184F28D318D8F81B005A90BB /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 184F28D218D8F81B005A90BB /* README.md */; };
+		184F28D518DBB3F7005A90BB /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 184F28D418DBB3F7005A90BB /* Settings.bundle */; };
 		2810897C177C74F20098FCF6 /* APLProgressTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2810897B177C74F20098FCF6 /* APLProgressTableViewCell.m */; };
 		28D68B83177BA8C100461540 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 28D68B82177BA8C100461540 /* Main.storyboard */; };
 		28F04CC8177BC6BB00D71779 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 28F04CC7177BC6BB00D71779 /* Media.xcassets */; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		184F28D218D8F81B005A90BB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		184F28D418DBB3F7005A90BB /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		2810897A177C74F10098FCF6 /* APLProgressTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APLProgressTableViewCell.h; sourceTree = "<group>"; };
 		2810897B177C74F20098FCF6 /* APLProgressTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APLProgressTableViewCell.m; sourceTree = "<group>"; };
 		28D68B82177BA8C100461540 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = en.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 		9B59E5A7174E7BF20083A8A5 = {
 			isa = PBXGroup;
 			children = (
+				184F28D418DBB3F7005A90BB /* Settings.bundle */,
 				184F28D218D8F81B005A90BB /* README.md */,
 				9B59E5B9174E7BF20083A8A5 /* Kontext */,
 				9B59E5B2174E7BF20083A8A5 /* Frameworks */,
@@ -215,6 +218,7 @@
 			files = (
 				28D68B83177BA8C100461540 /* Main.storyboard in Resources */,
 				28F04CC8177BC6BB00D71779 /* Media.xcassets in Resources */,
+				184F28D518DBB3F7005A90BB /* Settings.bundle in Resources */,
 				184F28D318D8F81B005A90BB /* README.md in Resources */,
 				9B59E5BE174E7BF20083A8A5 /* InfoPlist.strings in Resources */,
 			);
