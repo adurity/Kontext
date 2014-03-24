@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Classes</key>
+	<array>
+		<dict>
+			<key>Name</key>
+			<string>08-605 Engineering Privacy in Software</string>
+			<key>Room</key>
+			<string>GHC 4211</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>15-410 Operating System Design and Implementation</string>
+			<key>Room</key>
+			<string>GHC 6002</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>08-734 Usable Privacy and Security</string>
+			<key>Room</key>
+			<string>GHC 4102</string>
+		</dict>
+	</array>
+	<key>Seminars</key>
+	<array>
+		<dict>
+			<key>Name</key>
+			<string>Current Topics in Privacy</string>
+			<key>Room</key>
+			<string>GHC 5222</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>CUPS Lab Seminar</string>
+			<key>Room</key>
+			<string>GHC 6002</string>
+		</dict>
+	</array>
+	<key>Career Development</key>
+	<array>
+		<dict>
+			<key>Name</key>
+			<string>Palantir talk</string>
+			<key>Room</key>
+			<string>GHC 4101</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>Apple interviews</string>
+			<key>Room</key>
+			<string>GHC 2101</string>
+		</dict>
+	</array>
+	<key>Student Meetings</key>
+	<array>
+		<dict>
+			<key>Name</key>
+			<string>ACM</string>
+			<key>Room</key>
+			<string>GHC 6002</string>
+		</dict>
+		<dict>
+			<key>Name</key>
+			<string>IEEE</string>
+			<key>Room</key>
+			<string>GHC 5232</string>
+		</dict>
+	</array>
+	<key>Poster Sessions</key>
+	<array>
+		<dict>
+			<key>Name</key>
+			<string>Data Privacy Research</string>
+			<key>Room</key>
+			<string>GHC 9003</string>
+		</dict>
+	</array>
+</dict>
+</plist>
