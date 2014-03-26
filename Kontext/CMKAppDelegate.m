@@ -5,6 +5,7 @@
  */
 
 #import "CMKAppDelegate.h"
+#import "CMKDefaults.h"
 @import CoreLocation;
 
 
@@ -25,9 +26,39 @@
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
     
+    CLBeaconRegion *region = [[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:@"E2C56DB5-DFFB-48D2-B060-D0F5A71096E0"] major:5 identifier: BeaconIdentifier];
+    region = [self.locationManager.monitoredRegions member:region];
+    region = [[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:@"E2C56DB5-DFFB-48D2-B060-D0F5A71096E0"] major:5 identifier: BeaconIdentifier];
+ 
+    region.notifyOnEntry = YES;
+    region.notifyOnExit = YES;
+    region.notifyEntryStateOnDisplay = YES;
+    
+    [self.locationManager startMonitoringForRegion:region];
+    
     return YES;
 }
 
+- (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region{
+    if([region.identifier  isEqual: @"com.example.apple-samplecode.AirLocate"])
+    {
+        
+    }
+}
+
+- (void)locationManager:(CLLocationManager *)manager didStartMonitoringForRegion:(CLRegion *)region{
+    if(1==1)
+    {
+       NSInteger x=2;
+    }
+}
+
+- (void)locationManager:(CLLocationManager *)manager didExitRegion:(CLRegion *)region{
+    if([region.identifier  isEqual: @"com.example.apple-samplecode.AirLocate"])
+    {
+        
+    }
+}
 
 - (void)locationManager:(CLLocationManager *)manager didDetermineState:(CLRegionState)state forRegion:(CLRegion *)region
 {
@@ -36,9 +67,9 @@
      */
     UILocalNotification *notification = [[UILocalNotification alloc] init];
     
-    if(state == CLRegionStateInside)
+    if(state == CLRegionStateInside && [region.identifier  isEqual: @"com.example.apple-samplecode.AirLocate"])
     {
-        notification.alertBody = NSLocalizedString(@"You're inside the region", @"");
+        notification.alertBody = NSLocalizedString(@"Welcome you are in GHC!", @"");
     }
     else if(state == CLRegionStateOutside)
     {
