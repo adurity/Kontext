@@ -12,6 +12,8 @@
 @interface CMKAppDelegate () <UIApplicationDelegate, CLLocationManagerDelegate>
 
 @property CLLocationManager *locationManager;
+@property BOOL insideGHC;
+@property int count;
 
 @end
 
@@ -25,19 +27,23 @@
     // This location manager will be used to notify the user of region state transitions.
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
-    
-    CLBeaconRegion *region = [[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:@"E2C56DB5-DFFB-48D2-B060-D0F5A71096E0"] major:5 identifier: BeaconIdentifier];
+    self.insideGHC = true;
+    self.count = 0;
+    //GHC
+    CLBeaconRegion *region = [[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:@"B9407F30-F5F8-466E-AFF9-25556B57FE6D"] major:18542 minor:29288 identifier: BeaconIdentifier];
     region = [self.locationManager.monitoredRegions member:region];
-    region = [[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:@"E2C56DB5-DFFB-48D2-B060-D0F5A71096E0"] major:5 identifier: BeaconIdentifier];
+    region = [[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:@"B9407F30-F5F8-466E-AFF9-25556B57FE6D"] major:18542 minor:29288 identifier: BeaconIdentifier];
  
     region.notifyOnEntry = YES;
     region.notifyOnExit = YES;
     region.notifyEntryStateOnDisplay = YES;
     
     [self.locationManager startMonitoringForRegion:region];
+    [self.locationManager startRangingBeaconsInRegion:region];
     
     return YES;
 }
+
 
 - (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region{
     if([region.identifier  isEqual: @"com.example.apple-samplecode.AirLocate"])
@@ -46,17 +52,41 @@
     }
 }
 
-- (void)locationManager:(CLLocationManager *)manager didStartMonitoringForRegion:(CLRegion *)region{
-    if(1==1)
-    {
-       NSInteger x=2;
-    }
-}
 
 - (void)locationManager:(CLLocationManager *)manager didExitRegion:(CLRegion *)region{
     if([region.identifier  isEqual: @"com.example.apple-samplecode.AirLocate"])
     {
         
+    }
+}
+
+- (void)locationManager:(CLLocationManager *)manager
+        didRangeBeacons:(NSArray *)beacons
+               inRegion:(CLBeaconRegion *)region {
+    
+    // identify closest beacon in range
+    if ([beacons count] > 0) {
+        CLBeacon *closestBeacon = beacons[0];
+        if (closestBeacon.proximity == CLProximityImmediate && closestBeacon.major.intValue == 18542) {
+
+            if(self.insideGHC){
+                
+                UILocalNotification *notification = [[UILocalNotification alloc] init];
+                NSString *test = [NSString stringWithFormat:@"Welcome to GHC!(%d)", self.count];
+                notification.alertBody = NSLocalizedString(test,@"");
+            
+                [[UIApplication sharedApplication] presentLocalNotificationNow:notification];
+                self.insideGHC = false;
+            }
+        }
+        
+        else if(closestBeacon.proximity == CLProximityFar && closestBeacon.major.intValue == 18542) {
+
+            if(self.insideGHC==false){
+                self.insideGHC = true;
+                self.count++;
+            }
+        }
     }
 }
 
@@ -67,23 +97,19 @@
      */
     UILocalNotification *notification = [[UILocalNotification alloc] init];
     
-    if(state == CLRegionStateInside && [region.identifier  isEqual: @"com.example.apple-samplecode.AirLocate"])
+    if(state == CLRegionStateInside && [region.identifier  isEqual: @"EstimoteSampleRegion"])
     {
-        notification.alertBody = NSLocalizedString(@"Welcome you are in GHC!", @"");
+        //notification.alertBody = NSLocalizedString(@"Welcome you are in GHC!", @"");
     }
     else if(state == CLRegionStateOutside)
     {
-        notification.alertBody = NSLocalizedString(@"You're outside the region", @"");
+        //notification.alertBody = NSLocalizedString(@"You're outside the region", @"");
     }
     else
     {
         return;
     }
-    
-    /*
-     If the application is in the foreground, it will get a callback to application:didReceiveLocalNotification:.
-     If it's not, iOS will display the notification to the user.
-     */
+
     [[UIApplication sharedApplication] presentLocalNotificationNow:notification];
 }
 
