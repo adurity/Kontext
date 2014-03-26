@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		184F28D318D8F81B005A90BB /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 184F28D218D8F81B005A90BB /* README.md */; };
 		184F28D518DBB3F7005A90BB /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 184F28D418DBB3F7005A90BB /* Settings.bundle */; };
+		1857EBE518E31BF300F14D57 /* Beacons.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1857EBE418E31BF300F14D57 /* Beacons.plist */; };
 		18F4CD7E18DF92D900344254 /* CMKEventTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F4CD7D18DF92D900344254 /* CMKEventTableViewController.m */; };
 		18F4CD8018DFE90900344254 /* Events.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18F4CD7F18DFE90900344254 /* Events.plist */; };
 		2810897C177C74F20098FCF6 /* APLProgressTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2810897B177C74F20098FCF6 /* APLProgressTableViewCell.m */; };
@@ -35,6 +36,7 @@
 /* Begin PBXFileReference section */
 		184F28D218D8F81B005A90BB /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		184F28D418DBB3F7005A90BB /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		1857EBE418E31BF300F14D57 /* Beacons.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Beacons.plist; sourceTree = "<group>"; };
 		18F4CD7C18DF92D900344254 /* CMKEventTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMKEventTableViewController.h; sourceTree = "<group>"; };
 		18F4CD7D18DF92D900344254 /* CMKEventTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMKEventTableViewController.m; sourceTree = "<group>"; };
 		18F4CD7F18DFE90900344254 /* Events.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Events.plist; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 				9B59E5C3174E7BF20083A8A5 /* CMKAppDelegate.m */,
 				9B59E5BA174E7BF20083A8A5 /* Supporting Files */,
 				18F4CD7F18DFE90900344254 /* Events.plist */,
+				1857EBE418E31BF300F14D57 /* Beacons.plist */,
 			);
 			path = Kontext;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1857EBE518E31BF300F14D57 /* Beacons.plist in Resources */,
 				28D68B83177BA8C100461540 /* Main.storyboard in Resources */,
 				18F4CD8018DFE90900344254 /* Events.plist in Resources */,
 				28F04CC8177BC6BB00D71779 /* Media.xcassets in Resources */,
