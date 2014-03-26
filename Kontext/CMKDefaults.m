@@ -7,7 +7,7 @@
 #import "CMKDefaults.h"
 
 
-NSString *BeaconIdentifier = @"com.example.apple-samplecode.AirLocate";
+NSString *BeaconIdentifier = @"EstimoteSampleRegion";
 
 
 @implementation CMKDefaults
