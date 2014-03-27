@@ -5,11 +5,15 @@
  */
 
 #import "CMKAppDelegate.h"
+
 #import "CMKDefaults.h"
+#import "CMKLocation.h"
 @import CoreLocation;
 
 
 @interface CMKAppDelegate () <UIApplicationDelegate, CLLocationManagerDelegate>
+
+- (void)registerBeaconsForMonitoring;
 
 @property CLLocationManager *locationManager;
 @property BOOL insideGHC;
@@ -27,20 +31,9 @@
     // This location manager will be used to notify the user of region state transitions.
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
-    self.insideGHC = true;
-    self.count = 0;
-    //GHC
-    CLBeaconRegion *region = [[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:@"B9407F30-F5F8-466E-AFF9-25556B57FE6D"] major:18542 minor:29288 identifier: BeaconIdentifier];
-    region = [self.locationManager.monitoredRegions member:region];
-    region = [[CLBeaconRegion alloc] initWithProximityUUID:[[NSUUID alloc] initWithUUIDString:@"B9407F30-F5F8-466E-AFF9-25556B57FE6D"] major:18542 minor:29288 identifier: BeaconIdentifier];
- 
-    region.notifyOnEntry = YES;
-    region.notifyOnExit = YES;
-    region.notifyEntryStateOnDisplay = YES;
-    
-    [self.locationManager startMonitoringForRegion:region];
-    [self.locationManager startRangingBeaconsInRegion:region];
-    
+
+    [self registerBeaconsForMonitoring];
+
     return YES;
 }
 
@@ -97,7 +90,7 @@
      */
     UILocalNotification *notification = [[UILocalNotification alloc] init];
     
-    if(state == CLRegionStateInside && [region.identifier  isEqual: @"EstimoteSampleRegion"])
+    if(state == CLRegionStateInside && [region.identifier isEqual: @"EstimoteSampleRegion"])
     {
         //notification.alertBody = NSLocalizedString(@"Welcome you are in GHC!", @"");
     }
@@ -120,6 +113,24 @@
     NSString *cancelButtonTitle = NSLocalizedString(@"OK", @"Title for cancel button in local notification");
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:notification.alertBody message:nil delegate:nil cancelButtonTitle:cancelButtonTitle otherButtonTitles:nil];
     [alert show];
+}
+
+- (void)registerBeaconsForMonitoring
+{
+    for (CMKLocation *location in [[CMKDefaults sharedDefaults] locations]) {
+        CLBeaconRegion *region = location.region;
+
+        if ([self.locationManager.monitoredRegions member:region]) {
+            NSLog(@"Region already registered: %@", region.identifier);
+        }
+        else
+        {
+            region.notifyOnEntry = YES;
+            region.notifyOnExit = YES;
+            [self.locationManager startMonitoringForRegion:region];
+            NSLog(@"Monitoring region %@", region);
+        }
+    }
 }
 
 

@@ -6,25 +6,32 @@
 
 #import "CMKDefaults.h"
 
+#import "CMKLocation.h"
+@import CoreLocation;
+
 
 NSString *BeaconIdentifier = @"EstimoteSampleRegion";
 
+@interface CMKDefaults ()
+
+- (void)loadLocations;
+
+@end
 
 @implementation CMKDefaults
+{
+    NSMutableArray *_locations;
+}
+
 
 - (id)init
 {
     self = [super init];
-    if(self)
+    if (self)
     {
-        // uuidgen should be used to generate UUIDs.
-        _supportedProximityUUIDs = @[
-            [[NSUUID alloc] initWithUUIDString:@"E2C56DB5-DFFB-48D2-B060-D0F5A71096E0"],
-            [[NSUUID alloc] initWithUUIDString:@"5A4BCFCE-174E-4BAC-A814-092E77F6B7E5"],
-            [[NSUUID alloc] initWithUUIDString:@"74278BDA-B644-4520-8F0C-720EAF059935"],
-            [[NSUUID alloc] initWithUUIDString:@"B9407F30-F5F8-466E-AFF9-25556B57FE6D"],
-            [[NSUUID alloc] initWithUUIDString:@"8492E75F-4FD6-469D-B132-043FE94921D8"]];
-        _defaultPower = @-59;
+        _locations = [NSMutableArray array];
+
+        [self loadLocations];
     }
     
     return self;
@@ -43,9 +50,24 @@ NSString *BeaconIdentifier = @"EstimoteSampleRegion";
 }
 
 
-- (NSUUID *)defaultProximityUUID
+- (void)loadLocations
 {
-    return _supportedProximityUUIDs[0];
+    NSString *locationDictionaryPath;
+
+    if ((locationDictionaryPath =
+        [[NSBundle mainBundle] pathForResource:@"Locations"
+                                        ofType:@"plist"]))
+    {
+        NSArray *locations =
+            [NSArray arrayWithContentsOfFile:locationDictionaryPath];
+        for (NSDictionary *locationDictionary in locations)
+        {
+            CMKLocation *location;
+            location = [[CMKLocation alloc]
+                            initWithDictionary:locationDictionary];
+            [_locations addObject:location];
+        }
+    }
 }
 
 

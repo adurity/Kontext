@@ -5,7 +5,9 @@
  */
 
 #import "CMKRangingViewController.h"
+
 #import "CMKDefaults.h"
+#import "CMKLocation.h"
 @import CoreLocation;
 
 
@@ -31,11 +33,11 @@
     self.locationManager.delegate = self;
 
     // Populate the regions we will range once.
-    self.rangedRegions = [[NSMutableDictionary alloc] init];
+    self.rangedRegions = [NSMutableDictionary dictionary];
     
-    for (NSUUID *uuid in [CMKDefaults sharedDefaults].supportedProximityUUIDs)
+    for (CMKLocation *location in [CMKDefaults sharedDefaults].locations)
     {
-        CLBeaconRegion *region = [[CLBeaconRegion alloc] initWithProximityUUID:uuid identifier:[uuid UUIDString]];
+        CLBeaconRegion *region = location.region;
         self.rangedRegions[region] = [NSArray array];
     }
 }
