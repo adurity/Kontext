@@ -12,12 +12,14 @@
 
 - (instancetype)initWithIdentifier:(NSString *)identifier
                               name:(NSString *)name
-                            region:(CLBeaconRegion *)region {
+                            region:(CLBeaconRegion *)region
+                            events:(NSDictionary *)events {
     self = [super init];
     if (self) {
         _identifier = identifier;
         _name = name;
         _region = region;
+        _events = events;
     }
 
     return self;
@@ -26,6 +28,7 @@
 - (instancetype)initWithDictionary:(NSDictionary *)dict {
     NSString *name = [dict objectForKey:@"name"];
     NSString *identifier = [dict objectForKey:@"identifier"];
+    NSDictionary *events = [dict objectForKey:@"events"];
 
     NSDictionary *beacon = [dict objectForKey:@"beacon"];
     NSUUID *proximityUUID = [[NSUUID alloc]
@@ -62,7 +65,10 @@
         NSLog(@"WARNING: Unable to create beacon region %@", identifier);
     }
 
-    return [self initWithIdentifier:identifier name:name region:region];
+    return [self initWithIdentifier:identifier
+                               name:name
+                             region:region
+                             events:events];
 }
 
 @end

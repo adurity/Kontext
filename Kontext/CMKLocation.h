@@ -14,11 +14,13 @@
 
 - (instancetype)initWithIdentifier:(NSString *) identifier
                               name:(NSString *) name
-                            region:(CLBeaconRegion *) region;
+                            region:(CLBeaconRegion *) region
+                            events:(NSDictionary *) events;
 - (instancetype)initWithDictionary:(NSDictionary *) dict;
 
 @property NSString *identifier;
 @property NSString *name;
 @property CLBeaconRegion *region;
+@property NSDictionary *events;
 
 @end
