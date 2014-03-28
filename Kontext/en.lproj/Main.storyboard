@@ -5,6 +5,48 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
+        <!--Location Table View Controller - Locations-->
+        <scene sceneID="0Ai-pj-UCd">
+            <objects>
+                <tableViewController id="W91-xf-oic" customClass="CMKLocationTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="91Z-DN-4xS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="LocationCell" textLabel="8I0-ZL-l3V" style="IBUITableViewCellStyleDefault" id="aTu-uU-EjT">
+                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aTu-uU-EjT" id="cMz-HY-Vqb">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8I0-ZL-l3V">
+                                            <rect key="frame" x="15" y="0.0" width="270" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="ZA9-5U-T22" kind="push" id="0AQ-AH-XCe"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
+                        <connections>
+                            <outlet property="dataSource" destination="W91-xf-oic" id="JFO-Lm-xa3"/>
+                            <outlet property="delegate" destination="W91-xf-oic" id="DCv-X5-xJK"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Locations" id="nS6-HS-Ca7"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QxS-yN-3tO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="282" y="26"/>
+        </scene>
         <!--Event Table View Controller - Event List-->
         <scene sceneID="z9v-aL-RP1">
             <objects>
@@ -48,7 +90,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PC3-La-bMw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="282" y="26"/>
+            <point key="canvasLocation" x="824" y="26"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="doM-2U-wqC">
@@ -59,7 +101,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="ZA9-5U-T22" kind="relationship" relationship="rootViewController" id="d66-ZE-XRT"/>
+                        <segue destination="W91-xf-oic" kind="relationship" relationship="rootViewController" id="HmE-am-8iZ"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uk3-QI-85k" userLabel="First Responder" sceneMemberID="firstResponder"/>
