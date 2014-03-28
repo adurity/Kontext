@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+#import "CMKLocation.h"
+
 @interface CMKEventTableViewController : UITableViewController
+
+@property CMKLocation *location;
 
 @end

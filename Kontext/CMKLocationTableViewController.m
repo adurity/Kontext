@@ -42,7 +42,8 @@
     UITableViewCell *cell =
         [tableView dequeueReusableCellWithIdentifier:@"LocationCell"
                                         forIndexPath:indexPath];
-    if (indexPath.section == 0) {
+    if (indexPath.section == 0)
+    {
         CMKLocation *location = [self.locations objectAtIndex:indexPath.row];
         cell.textLabel.text = location.name;
     }
@@ -57,11 +58,18 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"ShowDetails"]) {
-        CMKEventTableViewController *eventTableViewController =
-            [segue destinationViewController];
+    if ([segue.identifier isEqualToString:@"ShowEvents"])
+    {
+        CMKEventTableViewController *destinationViewController =
+            segue.destinationViewController;
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        eventTableViewController.data = [self.dataController objectInListAtIndex:indexPath.row];
+        CMKLocation *location;
+
+        if (indexPath.section == 0 &&
+               (location = [self.locations objectAtIndex:indexPath.row]))
+        {
+            destinationViewController.location = location;
+        }
     }
 }
 

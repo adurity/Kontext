@@ -31,7 +31,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="ZA9-5U-T22" kind="push" id="0AQ-AH-XCe"/>
+                                    <segue destination="ZA9-5U-T22" kind="push" identifier="ShowEvents" id="0AQ-AH-XCe"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

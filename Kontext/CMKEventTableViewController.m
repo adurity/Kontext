@@ -20,22 +20,9 @@
 {
     [super viewDidLoad];
 
-    NSString *eventsDictionaryPath;
-    if ((eventsDictionaryPath = [[NSBundle mainBundle] pathForResource:@"Events" ofType:@"plist"])) {
-        self.groupedEvents = [NSDictionary dictionaryWithContentsOfFile:eventsDictionaryPath];
-    }
-    else
-    {
-        self.groupedEvents = [NSDictionary dictionary];
-    }
+    _groupedEvents = self.location.events;
+    self.navigationItem.title = self.location.name;
 }
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
