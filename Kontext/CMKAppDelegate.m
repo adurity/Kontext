@@ -28,6 +28,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSDictionary *appDefaults = [NSDictionary
+        dictionaryWithObject:[NSNumber numberWithBool:YES]
+                      forKey:@"UseBeaconsForContext"];
+
+    [defaults registerDefaults:appDefaults];
+    [defaults synchronize];
+
     // This location manager will be used to notify the user of region state transitions.
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
