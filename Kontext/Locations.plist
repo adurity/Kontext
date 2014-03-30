@@ -21,75 +21,75 @@
 			<key>Classes</key>
 			<array>
 				<dict>
-					<key>Name</key>
+					<key>name</key>
 					<string>08-605 Engineering Privacy in Software</string>
-					<key>Room</key>
+					<key>room</key>
 					<string>GHC 4211</string>
 				</dict>
 				<dict>
-					<key>Name</key>
+					<key>name</key>
 					<string>15-410 Operating System Design and Implementation</string>
-					<key>Room</key>
+					<key>room</key>
 					<string>GHC 6002</string>
 				</dict>
 				<dict>
-					<key>Name</key>
+					<key>name</key>
 					<string>08-734 Usable Privacy and Security</string>
-					<key>Room</key>
+					<key>room</key>
 					<string>GHC 4102</string>
 				</dict>
 			</array>
 			<key>Seminars</key>
 			<array>
 				<dict>
-					<key>Name</key>
+					<key>name</key>
 					<string>Current Topics in Privacy</string>
-					<key>Room</key>
+					<key>room</key>
 					<string>GHC 5222</string>
 				</dict>
 				<dict>
-					<key>Name</key>
+					<key>name</key>
 					<string>CUPS Lab Seminar</string>
-					<key>Room</key>
+					<key>room</key>
 					<string>GHC 6002</string>
 				</dict>
 			</array>
 			<key>Career Development</key>
 			<array>
 				<dict>
-					<key>Name</key>
+					<key>name</key>
 					<string>Palantir talk</string>
-					<key>Room</key>
+					<key>room</key>
 					<string>GHC 4101</string>
 				</dict>
 				<dict>
-					<key>Name</key>
+					<key>name</key>
 					<string>Apple interviews</string>
-					<key>Room</key>
+					<key>room</key>
 					<string>GHC 2101</string>
 				</dict>
 			</array>
 			<key>Student Meetings</key>
 			<array>
 				<dict>
-					<key>Name</key>
+					<key>name</key>
 					<string>ACM</string>
-					<key>Room</key>
+					<key>room</key>
 					<string>GHC 6002</string>
 				</dict>
 				<dict>
-					<key>Name</key>
+					<key>name</key>
 					<string>IEEE</string>
-					<key>Room</key>
+					<key>room</key>
 					<string>GHC 5232</string>
 				</dict>
 			</array>
 			<key>Poster Sessions</key>
 			<array>
 				<dict>
-					<key>Name</key>
+					<key>name</key>
 					<string>Data Privacy Research</string>
-					<key>Room</key>
+					<key>room</key>
 					<string>GHC 9003</string>
 				</dict>
 			</array>
@@ -107,41 +107,73 @@
 			<key>major</key>
 			<integer>925</integer>
 			<key>minor</key>
-			<integer>51399</integer>
+			<real>51399</real>
 		</dict>
 		<key>events</key>
 		<dict>
 			<key>Classes</key>
 			<array>
 				<dict>
-					<key>Name</key>
+					<key>name</key>
 					<string>08-605 Management of Software Development for Technology Executives</string>
-					<key>Room</key>
+					<key>room</key>
 					<string>NSH 1305</string>
 				</dict>
 				<dict>
-					<key>Name</key>
+					<key>name</key>
 					<string>05-731 The Data Pipeline</string>
-					<key>Room</key>
+					<key>room</key>
 					<string>NSH 3005</string>
 				</dict>
 			</array>
 			<key>Career Development</key>
 			<array>
 				<dict>
-					<key>Name</key>
+					<key>name</key>
 					<string>Amazon talk</string>
-					<key>Room</key>
+					<key>room</key>
 					<string>NSH 1305</string>
 				</dict>
 			</array>
 			<key>Poster Sessions</key>
 			<array>
 				<dict>
-					<key>Name</key>
+					<key>name</key>
 					<string>Machine Learning Research</string>
-					<key>Room</key>
+					<key>room</key>
 					<string>NSH Atrium</string>
+				</dict>
+			</array>
+		</dict>
+	</dict>
+	<dict>
+		<key>identifier</key>
+		<string>fake</string>
+		<key>name</key>
+		<string>Faker Hall</string>
+		<key>beacon</key>
+		<dict>
+			<key>proximityUUID</key>
+			<string>8492E75F-4FD6-469D-B132-043FE94921D8</string>
+		</dict>
+		<key>events</key>
+		<dict>
+			<key>Classes</key>
+			<array>
+				<dict>
+					<key>name</key>
+					<string>99-101 How to Win Friends and Influence People</string>
+					<key>room</key>
+					<string>FH 1936</string>
+				</dict>
+			</array>
+			<key>Career Development</key>
+			<array>
+				<dict>
+					<key>name</key>
+					<string>Networking with Dale Carnegie</string>
+					<key>room</key>
+					<string>FH 1888</string>
 				</dict>
 			</array>
 		</dict>

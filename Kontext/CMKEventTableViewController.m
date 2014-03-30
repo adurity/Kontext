@@ -51,8 +51,8 @@
 
     NSString *sectionKey = [self.groupedEvents allKeys][indexPath.section];
     NSDictionary *event = self.groupedEvents[sectionKey][indexPath.row];
-    cell.textLabel.text = event[@"Name"];
-    cell.detailTextLabel.text = event[@"Room"];
+    cell.textLabel.text = event[@"name"];
+    cell.detailTextLabel.text = event[@"room"];
     
     return cell;
 }
