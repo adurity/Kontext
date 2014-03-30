@@ -92,11 +92,11 @@
             </objects>
             <point key="canvasLocation" x="824" y="26"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation Controller - Locations-->
         <scene sceneID="doM-2U-wqC">
             <objects>
                 <navigationController definesPresentationContext="YES" id="lUJ-46-ewV" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" systemItem="recents" id="B8K-fd-XxG"/>
+                    <tabBarItem key="tabBarItem" title="Locations" id="B8K-fd-XxG"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="6u6-Q5-ruC">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -173,12 +173,12 @@
             </objects>
             <point key="canvasLocation" x="-788" y="350"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Navigation Controller - Beacons-->
         <scene sceneID="YBv-xL-bSN">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Pbn-tE-a6r" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout"/>
-                    <tabBarItem key="tabBarItem" systemItem="search" id="czn-KT-BAh"/>
+                    <tabBarItem key="tabBarItem" title="Beacons" id="czn-KT-BAh"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Afa-BJ-EBS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
