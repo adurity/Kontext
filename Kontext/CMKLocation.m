@@ -25,6 +25,7 @@
     return self;
 }
 
+
 - (instancetype)initWithDictionary:(NSDictionary *)dict {
     NSString *name = [dict objectForKey:@"name"];
     NSString *identifier = [dict objectForKey:@"identifier"];
