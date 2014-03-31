@@ -14,14 +14,13 @@
 
 @interface CMKAppDelegate () <UIApplicationDelegate, CLLocationManagerDelegate>
 
-- (void)registerBeaconsForMonitoring;
-
 @property CLLocationManager *locationManager;
 @property UILocalNotification *lastNotification;
 
+- (void)registerBeaconsForMonitoring;
+- (void)unregisterBeaconsForMonitoring;
+
 @end
-
-
 
 @implementation CMKAppDelegate
 
@@ -32,14 +31,21 @@
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
 
-    [self registerBeaconsForMonitoring];
+    // establish user default settings
+    [[CMKDefaults sharedDefaults] registerUserDefaults];
 
-    NSLog(@"Monitored regions: %@", self.locationManager.monitoredRegions);
-    if (launchOptions)
+    // if beacons will be used for context (default YES) register them
+    if ([CMKDefaults sharedDefaults].useBeaconsForContext)
     {
-        NSLog(@"LaunchOptions: %@", launchOptions);
-        NSLog(@"Notification: %@", launchOptions[UIApplicationLaunchOptionsLocalNotificationKey]);
+        [self registerBeaconsForMonitoring];
     }
+
+    // finally, register for notification of any changes to defaults
+    [[NSNotificationCenter defaultCenter]
+         addObserver:self
+            selector:@selector(defaultsDidChange:)
+                name:NSUserDefaultsDidChangeNotification
+              object:nil];
 
     return YES;
 }
@@ -157,6 +163,21 @@
             NSLog(@"Stopped monitoring region %@", region);
         }
     }
+}
+
+
+- (void)defaultsDidChange:(NSNotification *)notification
+{
+    if ([CMKDefaults sharedDefaults].useBeaconsForContext)
+    {
+        [self registerBeaconsForMonitoring];
+    }
+    else
+    {
+        [self unregisterBeaconsForMonitoring];
+    }
+
+    NSLog(@"Monitored regions: %@", self.locationManager.monitoredRegions);
 }
 
 @end

@@ -11,6 +11,7 @@
 
 
 NSString *BeaconIdentifier = @"EstimoteSampleRegion";
+NSString * const CMKUserDefaultUseBeaconsForContext = @"UseBeaconsForContext";
 
 @interface CMKDefaults ()
 
@@ -47,6 +48,22 @@ NSString *BeaconIdentifier = @"EstimoteSampleRegion";
     });
     
     return sharedDefaults;
+}
+
+
+- (void)registerUserDefaults
+{
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSDictionary *appDefaults = @{CMKUserDefaultUseBeaconsForContext: @YES};
+
+    [defaults registerDefaults:appDefaults];
+}
+
+
+- (BOOL)useBeaconsForContext
+{
+    return [[NSUserDefaults standardUserDefaults]
+                boolForKey:CMKUserDefaultUseBeaconsForContext];
 }
 
 
