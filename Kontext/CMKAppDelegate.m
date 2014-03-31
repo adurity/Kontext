@@ -13,15 +13,16 @@
 
 @interface CMKAppDelegate () <UIApplicationDelegate, CLLocationManagerDelegate>
 
-- (void)registerBeaconsForMonitoring;
-
 @property CLLocationManager *locationManager;
 @property BOOL insideGHC;
 @property int count;
 
+- (void)registerBeaconsForMonitoring;
+- (void)unregisterBeaconsForMonitoring;
+
 @end
 
-
+NSString * const CMKUserDefaultUseBeaconsForContext = @"UseBeaconsForContext";
 
 @implementation CMKAppDelegate
 
@@ -121,23 +122,36 @@
     [alert show];
 }
 
+
 - (void)registerBeaconsForMonitoring
 {
-    for (CMKLocation *location in [[CMKDefaults sharedDefaults] locations]) {
+    for (CMKLocation *location in [[CMKDefaults sharedDefaults] locations])
+    {
         CLBeaconRegion *region = location.region;
 
-        if ([self.locationManager.monitoredRegions member:region]) {
-            NSLog(@"Region already registered: %@", region.identifier);
-        }
-        else
+        if (![self.locationManager.monitoredRegions member:region])
         {
             region.notifyOnEntry = YES;
             region.notifyOnExit = YES;
             [self.locationManager startMonitoringForRegion:region];
-            NSLog(@"Monitoring region %@", region);
+            NSLog(@"Started monitoring region %@", region);
         }
     }
 }
 
+
+- (void)unregisterBeaconsForMonitoring
+{
+    for (CMKLocation *location in [[CMKDefaults sharedDefaults] locations])
+    {
+        CLBeaconRegion *region = location.region;
+
+        if ([self.locationManager.monitoredRegions member:region])
+        {
+            [self.locationManager stopMonitoringForRegion:region];
+            NSLog(@"Stopped monitoring region %@", region);
+        }
+    }
+}
 
 @end
