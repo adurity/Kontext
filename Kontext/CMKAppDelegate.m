@@ -29,9 +29,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSDictionary *appDefaults = [NSDictionary
-        dictionaryWithObject:[NSNumber numberWithBool:YES]
-                      forKey:@"UseBeaconsForContext"];
+    NSDictionary *appDefaults = @{CMKUserDefaultUseBeaconsForContext: @YES};
 
     [defaults registerDefaults:appDefaults];
     [defaults synchronize];

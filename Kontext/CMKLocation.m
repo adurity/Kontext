@@ -27,17 +27,15 @@
 
 
 - (instancetype)initWithDictionary:(NSDictionary *)dict {
-    NSString *name = [dict objectForKey:@"name"];
-    NSString *identifier = [dict objectForKey:@"identifier"];
-    NSDictionary *events = [dict objectForKey:@"events"];
+    NSString *name = dict[@"name"];
+    NSString *identifier = dict[@"identifier"];
+    NSDictionary *events = dict[@"events"];
 
-    NSDictionary *beacon = [dict objectForKey:@"beacon"];
+    NSDictionary *beacon = dict[@"beacon"];
     NSUUID *proximityUUID = [[NSUUID alloc]
-        initWithUUIDString:[beacon objectForKey:@"proximityUUID"]];
-    CLBeaconMajorValue major =
-        [[beacon objectForKey:@"major"] unsignedShortValue];
-    CLBeaconMinorValue minor =
-        [[beacon objectForKey:@"minor"] unsignedShortValue];
+                             initWithUUIDString:beacon[@"proximityUUID"]];
+    CLBeaconMajorValue major = [beacon[@"major"] unsignedShortValue];
+    CLBeaconMinorValue minor = [beacon[@"minor"] unsignedShortValue];
     CLBeaconRegion *region;
 
     if (proximityUUID && major && minor && identifier)
