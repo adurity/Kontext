@@ -148,6 +148,57 @@
 	</dict>
 	<dict>
 		<key>identifier</key>
+		<string>uc</string>
+		<key>name</key>
+		<string>University Center</string>
+		<key>beacon</key>
+		<dict>
+			<key>proximityUUID</key>
+			<string>B9407F30-F5F8-466E-AFF9-25556B57FE6D</string>
+			<key>major</key>
+			<integer>34725</integer>
+			<key>minor</key>
+			<integer>35917</integer>
+		</dict>
+		<key>events</key>
+		<dict>
+			<key>Career Development</key>
+			<array>
+				<dict>
+					<key>name</key>
+					<string>Technical Opportunities Career Fair</string>
+					<key>room</key>
+					<string>Rangos Ballroom</string>
+				</dict>
+			</array>
+			<key>Speakers</key>
+			<array>
+				<dict>
+					<key>name</key>
+					<string>Dr. Subra Suresh</string>
+					<key>room</key>
+					<string>McConomy Auditorium</string>
+				</dict>
+			</array>
+			<key>Performing Arts</key>
+			<array>
+				<dict>
+					<key>name</key>
+					<string>Counterpoint</string>
+					<key>room</key>
+					<string>Alumni Lounge</string>
+				</dict>
+				<dict>
+					<key>name</key>
+					<string>The Originals</string>
+					<key>room</key>
+					<string>Andy&apos;s Lounge</string>
+				</dict>
+			</array>
+		</dict>
+	</dict>
+    <!--<dict>
+		<key>identifier</key>
 		<string>fake</string>
 		<key>name</key>
 		<string>Faker Hall</string>
@@ -177,6 +228,6 @@
 				</dict>
 			</array>
 		</dict>
-	</dict>
+	</dict>-->
 </array>
 </plist>
