@@ -176,6 +176,8 @@
             NSLog(@"Started monitoring region %@", region);
         }
     }
+
+    NSLog(@"Monitored regions: %@", self.locationManager.monitoredRegions);
 }
 
 
@@ -191,6 +193,8 @@
             NSLog(@"Stopped monitoring region %@", region);
         }
     }
+
+    NSLog(@"Monitored regions: %@", self.locationManager.monitoredRegions);
 }
 
 
@@ -204,8 +208,6 @@
     {
         [self unregisterBeaconsForMonitoring];
     }
-
-    NSLog(@"Monitored regions: %@", self.locationManager.monitoredRegions);
 }
 
 @end
