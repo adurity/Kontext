@@ -8,7 +8,36 @@
 
 #import "CMKLocation.h"
 
+#import "CMKDefaults.h"
+
 @implementation CMKLocation
+
++ (instancetype)locationWithIdentifier:(NSString *)identifier
+{
+    CMKLocation *location;
+    
+    NSUInteger locationIndex = [[[CMKDefaults sharedDefaults] locations]
+            indexOfObjectPassingTest: ^(id obj, NSUInteger idx, BOOL *stop)
+    {
+        CMKLocation *l = (CMKLocation *) obj;
+        if ([l.identifier isEqualToString:identifier])
+        {
+            return YES;
+        }
+        else
+        {
+            return NO;
+        }
+    }];
+
+    if (locationIndex != NSNotFound)
+    {
+        location = [CMKDefaults sharedDefaults].locations[locationIndex];
+    }
+
+    return location;
+}
+
 
 - (instancetype)initWithIdentifier:(NSString *)identifier
                               name:(NSString *)name
