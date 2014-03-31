@@ -12,7 +12,8 @@
 @import CoreLocation;
 
 
-@interface CMKAppDelegate () <UIApplicationDelegate, CLLocationManagerDelegate>
+@interface CMKAppDelegate () <UIApplicationDelegate, CLLocationManagerDelegate,
+                              UIAlertViewDelegate>
 
 @property CLLocationManager *locationManager;
 @property UILocalNotification *lastNotification;
@@ -34,10 +35,23 @@
     // establish user default settings
     [[CMKDefaults sharedDefaults] registerUserDefaults];
 
-    // if beacons will be used for context (default YES) register them
-    if ([CMKDefaults sharedDefaults].useBeaconsForContext)
+    // on first execution, show notification before registering beacons
+    if ([CMKDefaults sharedDefaults].useBeaconsForContext &&
+        ![CMKDefaults sharedDefaults].hasDisplayedBeaconNotification)
     {
-        [self registerBeaconsForMonitoring];
+        // show just-in-time notification on the first use of beacons
+        NSString *alertTitle = NSLocalizedString(@"Beacons", @"Beacon notification title");
+        NSString *alertMessage = NSLocalizedString(@"This app uses iBeacons to provide information based on your location. You may disable this feature within the Settings app.", @"Beacon notification message");
+        NSString *alertCancelButtonTitle = NSLocalizedString(@"OK", @"Beacon notification cancel button title");
+
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle:alertTitle
+                                    message:alertMessage
+                                   delegate:self
+                          cancelButtonTitle:alertCancelButtonTitle
+                          otherButtonTitles:nil];
+        [alert show];
+        [CMKDefaults sharedDefaults].hasDisplayedBeaconNotification = YES;
     }
 
     // finally, register for notification of any changes to defaults
@@ -132,6 +146,20 @@
     tabBarController.selectedIndex = 0;
     [locationsNavigationController popToRootViewControllerAnimated:NO];
     [locationsNavigationController pushViewController:eventTableViewContoller animated:NO];
+}
+
+
+#pragma UIAlertView
+
+- (void)alertView:(UIAlertView *)alert
+            clickedButtonAtIndex:(NSInteger) buttonIndex
+{
+    if (buttonIndex == 0) // cancel
+    {
+        if ([CMKDefaults sharedDefaults].useBeaconsForContext) {
+            [self registerBeaconsForMonitoring];
+        }
+    }
 }
 
 

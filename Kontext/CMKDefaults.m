@@ -12,6 +12,8 @@
 
 NSString *BeaconIdentifier = @"EstimoteSampleRegion";
 NSString * const CMKUserDefaultUseBeaconsForContext = @"UseBeaconsForContext";
+NSString * const CMKUserDefaultHasDisplayedBeaconNotification =
+    @"HasDisplayedBeaconNotification";
 
 @interface CMKDefaults ()
 
@@ -66,6 +68,19 @@ NSString * const CMKUserDefaultUseBeaconsForContext = @"UseBeaconsForContext";
                 boolForKey:CMKUserDefaultUseBeaconsForContext];
 }
 
+
+- (BOOL)hasDisplayedBeaconNotification
+{
+    return [[NSUserDefaults standardUserDefaults]
+                boolForKey:CMKUserDefaultHasDisplayedBeaconNotification];
+}
+
+- (void)setHasDisplayedBeaconNotification:(BOOL)hasDisplayedBeaconNotification
+{
+    [[NSUserDefaults standardUserDefaults]
+         setBool:hasDisplayedBeaconNotification
+          forKey:CMKUserDefaultHasDisplayedBeaconNotification];
+}
 
 - (void)loadLocations
 {
